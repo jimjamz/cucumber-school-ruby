@@ -1,6 +1,6 @@
 require "shouty"
 
-Given('Lucy is located {int} metres from Sean') do |distance|
+Given('{person} is located/standing {int} metre(s) from Sean') do |distance|
     @lucy = Shouty::Person.new
     @sean = Shouty::Person.new
     @lucy.move_to(distance)
@@ -11,6 +11,6 @@ When('Sean shouts {string}') do |message|
     @message_from_sean = message
 end
 
-Then("Lucy hears Sean's message") do
+Then("{person} hears Sean's message") do
     expect(@lucy.messages_heard).to include @message_from_sean
 end
