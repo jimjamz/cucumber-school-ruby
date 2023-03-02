@@ -11,15 +11,13 @@ Feature: Hear shout
     And a person named Sean
 
   Rule: Shouts can be heard by other users
-    Scenario: Listener hears a message
+    Scenario Outline: Listener hears a message
       # And Lucy is located 15 metres from Sean
-      When Sean shouts "Free bagels at Sean's"
+      When Sean shouts "<message>"
       Then Lucy hears Sean's message
-
-    Scenario: Listener hears a different message
-      # Given Lucy is located 15 metres from Sean
-      When Sean shouts "Free coffee!"
-      Then Lucy hears Sean's message
+      | message |
+      | Free bagels at Sean's |
+      | Free coffee! |
 
     Scenario: Listener is within range
 
