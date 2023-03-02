@@ -15,7 +15,7 @@ class Person
     # add the message heard to the list of heard messages
     messages_heard << message
   end
- 
+
 end
 
 class Network
